@@ -1,13 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import FormProp from "./Components/FormProp";
+import { Auth0Provider } from "@auth0/auth0-react";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+
+
+      <Routes>
+        <Route path="/" element={<Auth0Provider
+        domain="dev-gonf6ysh.us.auth0.com"
+        clientId="vLYBJVhpRwmL86MbveaArcYfBbSqyM3N"
+        authorizationParams={{
+          redirect_uri: window.location.origin,
+        }}
+      ><App /></Auth0Provider>} />
+        <Route path="/RegistroPropietario" element={<FormProp />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
