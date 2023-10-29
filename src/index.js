@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import FormProp from "./Components/FormProp";
 import { Auth0Provider } from "@auth0/auth0-react";
+import NotFound from "./Components/NotFound";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -22,6 +23,7 @@ root.render(
         }}
       ><App /></Auth0Provider>} />
         <Route path="/RegistroPropietario" element={<FormProp />} />
+        <Route path= "/*" element={<NotFound/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
