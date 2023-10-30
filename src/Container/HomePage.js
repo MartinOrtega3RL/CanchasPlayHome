@@ -1,10 +1,10 @@
 import React from "react";
-import "./App.css";
-import back from "./Assets/GROUND.svg";
+import "../Style/HomePage.css";
+import back from "../Assets/GROUND.svg";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useNavigate } from "react-router-dom";
 
-function App() {
+function HomePage() {
   // Login AUTH0
 
   const { loginWithRedirect, isAuthenticated, logout } = useAuth0();
@@ -171,7 +171,7 @@ function App() {
             Propietario
           </button>
         </div>
-        <h2 className="texto">o</h2>
+        <h2 className="texto"></h2>
         <div className="row row2">
           <div>
             <h2 className="proptext">Si no tienes cuenta como Usuario registrate aqui</h2>
@@ -243,4 +243,4 @@ function App() {
   );
 }
 
-export default App;
+export default HomePage;

@@ -383,7 +383,7 @@
   @font-face {
     font-family: 'Esport';
     /* Nombre que asignas a tu fuente */
-    src: url('./Assets/Fonts/SF\ Sports\ Night\ Alternate.ttf') format('truetype');
+    src: url('../Assets/Fonts/SF\ Sports\ Night\ Alternate.ttf') format('truetype');
     /* Ruta a tu archivo de fuente y formato */
     /* Puedes agregar múltiples fuentes y formatos aquí para compatibilidad con diferentes navegadores */
   }

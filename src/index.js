@@ -1,29 +1,37 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import FormProp from "./Components/FormProp";
 import { Auth0Provider } from "@auth0/auth0-react";
 import NotFound from "./Components/NotFound";
+import HomePage from "./Container/HomePage";
+
+//domain: process.env.REACT_APP_AUTH0_DOMAIN,
+//clientID: process.env.REACT_APP_AUTH0_CLIENTID,
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-
-
       <Routes>
-        <Route path="/" element={<Auth0Provider
-        domain="dev-gonf6ysh.us.auth0.com"
-        clientId="vLYBJVhpRwmL86MbveaArcYfBbSqyM3N"
-        authorizationParams={{
-          redirect_uri: window.location.origin,
-        }}
-      ><App /></Auth0Provider>} />
+        <Route
+          path="/"
+          element={
+            <Auth0Provider
+              domain="dev-gonf6ysh.us.auth0.com"
+              clientId="vLYBJVhpRwmL86MbveaArcYfBbSqyM3N"
+              authorizationParams={{
+                redirect_uri: window.location.origin,
+              }}
+            >
+              <HomePage />
+            </Auth0Provider>
+          }
+        />
         <Route path="/RegistroPropietario" element={<FormProp />} />
-        <Route path= "/*" element={<NotFound/>} />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

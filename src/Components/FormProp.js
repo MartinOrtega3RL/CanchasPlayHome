@@ -5,8 +5,8 @@ import auth0 from "auth0-js";
 import "../Style/FormProp.css";
 import { Navigate, useNavigate } from "react-router-dom";
 const auth0Config = {
-  domain: process.env.REACT_APP_AUTH0_DOMAIN,
-  clientID: process.env.REACT_APP_AUTH0_CLIENTID,
+  domain: "dev-gonf6ysh.us.auth0.com",
+  clientID:"vLYBJVhpRwmL86MbveaArcYfBbSqyM3N",
   redirectUri: "http://localhost:3000/callback", // Cambia esto según tu configuración
   responseType: "token id_token",
   scope: "openid profile email",
